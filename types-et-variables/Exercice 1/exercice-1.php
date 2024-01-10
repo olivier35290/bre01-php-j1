@@ -14,5 +14,10 @@ echo "<br>";
 $nbstr=(string)$nb;
 echo $nbstr;
 echo "<br>";
+//OU:
+$nbstr = "$nb<br>";
+
+echo $nbstr;
+
 
 ?>
