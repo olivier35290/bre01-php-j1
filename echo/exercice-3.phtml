@@ -1,7 +1,7 @@
 <?php
 
 /*Utilisez le code PHP et HTML ci-dessous 
-pour faire une boucle qui affichera chacun des nimaux au sein d'une liste non-ordonnée.
+pour faire une boucle qui affichera chacun des animaux au sein d'une liste non-ordonnée.
 */
 $animals = ["Chat", "Chien", "Souris", "Lama"];
 
@@ -14,7 +14,12 @@ $animals = ["Chat", "Chien", "Souris", "Lama"];
 		<title>Exercice 3 echo</title>
 	</head>
 	<body>
+		<?php
+		foreach ($animals as $animal){
+		    echo"<li>$animal</li>";
+		}
 		
+		?>
 	</body>
 </html>
 

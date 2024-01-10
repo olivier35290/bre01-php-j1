@@ -9,14 +9,6 @@ S'il est impair affichez le dans un paragraphe qui a la classe blue.
 $number1 = 42;
 $number2 = 33;
 
-.red {
-	color:red;
-}
-
-.blue {
-	color:blue;
-}
-
 ?>
 
 
@@ -28,6 +20,23 @@ $number2 = 33;
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+	    <?php
+	    
+		if($number1 %2 == 0) {
+		    echo "<p class='red'>Le nombre $number1 est pair</p>";
+			}
+		else {
+			echo "<p class='blue'>Le nombre $number1 est impair</p>";
+			}
+		
+		if($number2 %2 == 0) {
+		    echo "<p class='red'>Le nombre $number2 est pair</p>";
+			}
+		else {
+			echo "<p class='blue'>Le nombre $number2 est impair</p>";
+			}
+		
+		?>
 		
 	</body>
 </html>
