@@ -12,7 +12,7 @@ echo "<br>";
 var_dump(getFirst([]));
 echo "<br>";
 */
-function getFirst(int $array) : int
+function getFirst(array $array) : ? int
 {
     if(empty($array)){
         return null;
