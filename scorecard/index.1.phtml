@@ -1,0 +1,71 @@
+<?php
+$students = [
+	[
+		"firstName" => "James",
+		"lastName" => "Fields",
+		"grades" => [12, 11, 15],
+		"average" => -1
+	],
+	[
+		"firstName" => "Richard",
+		"lastName" => "Stein",
+		"grades" => [18, 12, 13],
+		"average" => -1
+	],
+	[
+		"firstName" => "Mark",
+		"lastName" => "Hartoff",
+		"grades" => [9, 11, 10],
+		"average" => -1
+	],
+	[
+		"firstName" => "Thomas",
+		"lastName" => "Nestle",
+		"grades" => [9, 8, 5],
+		"average" => -1
+	],
+	[
+		"firstName" => "Jeremy",
+		"lastName" => "Brent",
+		"grades" => [18, 15, 16],
+		"average" => -1
+	]
+];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>exercice scorecard</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+	    <?php
+            foreach ($students as $student){
+                echo "<article class=''>
+            	<header>
+            		<h1>". $student["firstName"] . "" . $student["lastName"] . "</h1>
+            	</header>
+            	<section>
+            		<h2>Notes : </h2>
+            		<ul>
+            			<li>" . $student["grades"][0] . "</li>
+            			<li>" . $student["grades"][1] . "</li>
+            			<li>" . $student["grades"][2] . "</li>
+            		</ul>
+            	</section>
+            	<footer>
+            		<h3>Moyenne des notes : " . $student["average"] . "</h3>
+            	</footer>
+            	
+            </article>";
+        	}
+        ?>
+    </body>
+</html>
+
+<!--Parcourez le tableau des étudiants et pour chacun d'entre eux, 
+affichez le bon HTML en dynamisant le `<h1>` avec le bon nom et le bon prénom.
+-->
+

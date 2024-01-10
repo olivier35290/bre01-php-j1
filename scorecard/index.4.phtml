@@ -1,0 +1,113 @@
+<?php
+$students = [
+	[
+		"firstName" => "James",
+		"lastName" => "Fields",
+		"grades" => [12, 11, 15],
+		"average" => -1
+	],
+	[
+		"firstName" => "Richard",
+		"lastName" => "Stein",
+		"grades" => [18, 12, 13],
+		"average" => -1
+	],
+	[
+		"firstName" => "Mark",
+		"lastName" => "Hartoff",
+		"grades" => [9, 11, 10],
+		"average" => -1
+	],
+	[
+		"firstName" => "Thomas",
+		"lastName" => "Nestle",
+		"grades" => [9, 8, 5],
+		"average" => -1
+	],
+	[
+		"firstName" => "Jeremy",
+		"lastName" => "Brent",
+		"grades" => [18, 15, 16],
+		"average" => -1
+	]
+];
+
+// Fonction pour calculer la moyenne des notes d'un étudiant
+function calculateAverage($grades) {
+    if (count($grades) === 0) {
+        return 0; // Moyenne de 0 si aucune note n'est disponible
+    }
+    
+    $average = array_sum($grades) / count($grades);
+
+    // Utiliser number_format pour limiter à 2 chiffres après la virgule
+    return number_format($average, 2);
+}
+
+// Parcourir le tableau des étudiants pour calculer et stocker la moyenne
+foreach ($students as &$student) {
+    $student["average"] = calculateAverage($student["grades"]);
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>exercice scorecard</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+	    <?php
+			    
+	    
+            foreach ($students as $student){
+                echo "<article class='" . getArticleClass($student["average"]) . "'>
+            	<header>
+            		<h1>". $student["firstName"] . "" . $student["lastName"] . "</h1>
+            	</header>
+            	<section>
+            		<h2>Notes : </h2>
+            		<ul>
+            		"; 
+            		foreach ($student["grades"] as $grade){
+            			echo"<li>" . $grade . "</li>";
+            		}
+            			echo"
+            		</ul>
+            	</section>
+            	<footer>
+
+            		<h3>Moyenne des notes : " . $student["average"] . "</h3>
+            	</footer>
+            	
+            </article>";
+        	}
+        	
+        	// Fonction pour retourner la classe de l'article
+		    function getArticleClass($average) {
+		      if ($average < 10) {
+		        return "red";
+		      } else if ($average <= 13) {
+		        return "orange";
+		      } else {
+		        return "green";
+		      }
+	    }
+        ?>
+    </body>
+</html>
+
+<!--Nous allons compléter le code des étapes précédentes, en dynamisant les classes que nous appliquons sur les `<article>`.
+
+Dans un fichier `style.css`, définissez trois classes :
+
+- `.orange` change la couleur du texte en orange
+- `.red` change la couleur du texte en rouge
+- `.green` change la couleur du texte en vert
+
+Si un étudiant a une moyenne inférieur à 10, son article a la classe `red`. 
+Si sa moyenne est entre 10 et 13, son article a la classe `orange`. 
+si sa moyenne est supérieure à 13, l'article a la classe `green`.
+-->
