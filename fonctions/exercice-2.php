@@ -10,7 +10,7 @@ Cette fonction calcule la moyenne des nombres contenus dans le tableau contenu e
 echo average([12, 15, 18, 9])."<br>";
 echo average([12, 15, 18, 11, 14])."<br>";
 */
-function average($number)
+function average(array $number) : float
 {
     $sum = array_sum($number);
     $size = count($number);
@@ -22,5 +22,28 @@ function average($number)
 
 echo average([12, 15, 18, 9])."<br>";
 echo average([12, 15, 18, 11, 14])."<br>";
+echo average([0, 0, 0, 0, 0])."<br>";
+
+
+
+
+
+/*  ou:
+function average(array $numbers) : float
+{
+    $sum = 0;
+
+    foreach($numbers as $number)
+    {
+        $sum += $number;
+    }
+
+    return $sum / count($numbers);
+}
+
+echo average([12, 15, 18, 9])."<br>";
+echo average([12, 15, 18, 11, 14])."<br>";
+*/
+
 
 ?>
